@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Lato', sans-serif;
+    src: url('/Lato-Regular.ttf') format('ttf');
+  }
+
+  /* Container que ocupa toda la pantalla */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+    background-color: white;
+}
+/* 5 tiras verticales con espacio entre ellas */
+.tiras {
+    width: 20%;
+    height: 100vh;
+    padding: 0 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Decoracion de cada tira con animacion de apariencia  */
+.tiras .tira-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-fill-mode: both;
+}
+
+/* especificamos cada tira 1-5 */
+.tiras:first-child .tira-content {
+    background-color: #244f75;
+    animation-name: tira1;
+    animation-delay: 0.1s;
+    transform: translate3D(-100%, 0, 0);
+}
+
+.tiras:nth-child(2) .tira-content {
+    background-color: #60bfbf;
+    animation-name: tira2;
+    animation-delay: 0.2s;
+    transform: translate3D(0, 100%, 0);
+}
+
+.tiras:nth-child(3) .tira-content {
+    background-color: #8c4b7e;
+    animation-name: tira3;
+    animation-delay: 0.3s;
+    transform: translate3D(0, -100%, 0);
+}
+
+.tiras:nth-child(4) .tira-content {
+    background-color: #f8bb44;
+    animation-name: tira4;
+    animation-delay: 0.4s;
+    transform: translate3D(0, 100%, 0);
+}
+
+.tiras:nth-child(5) .tira-content {
+    background-color: #f24b4b;
+    animation-name: tira5;
+    animation-delay: 0.5s;
+    transform: translate3D(100%, 0, 0);
+}
+
+/* Decoracion de contenido de cada tira */
+.tira-title {
+    font-family: 'Lato'; 
+    color: white;
+    font-size: 3.5vh;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    font-weight: 300;
+    font-size: 3.5vw;
+}
+
+/* Tiras semitransparentes inclinadas */
+.tiras .tira-content:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.1;
+    transform-origin: center center;
+    transform: skew(30deg) scaleY(1) translate(0, 0);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: absolute;
+}
+
+/* Al pasar raton tira semitransparente se pone vertical */
+.tiras .tira-content:hover:before {
+    transform: skew(0deg) scale(3) translate(0, 0);
+    opacity: 0.1;
+}
+
+/* Animacion de apariencia de tiras */
+/* de izquierda */
+@keyframes tira1 {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* de abajo */
+@keyframes tira2 {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* de arriva */
+@keyframes tira3 {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* de abajo */
+@keyframes tira4 {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* de derecha */
+@keyframes tira5 {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
