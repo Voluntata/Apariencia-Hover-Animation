@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'Lato', sans-serif;
-    src: url('/Lato-Regular.ttf') format('ttf');
+    src: url('Lato-Regular.ttf') format('ttf');
   }
 
   /* Container que ocupa toda la pantalla */
